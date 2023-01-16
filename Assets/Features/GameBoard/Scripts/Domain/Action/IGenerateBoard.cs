@@ -2,6 +2,6 @@
 {
     public interface IGenerateBoard
     {
-        void Invoke(BoardConfiguration boardConfiguration);
+        MineBoard Invoke(BoardConfiguration boardConfiguration);
     }
 }

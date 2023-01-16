@@ -2,9 +2,10 @@
 {
     public class GenerateBoard : IGenerateBoard
     {
-        public void Invoke(BoardConfiguration boardConfiguration)
-        {
-            throw new System.NotImplementedException();
-        }
+        private readonly IBoardServiceService _service;
+
+        public GenerateBoard(IBoardServiceService service) => _service = service;
+
+        public MineBoard Invoke(BoardConfiguration boardConfiguration) => _service.GenerateBoard(boardConfiguration);
     }
 }
