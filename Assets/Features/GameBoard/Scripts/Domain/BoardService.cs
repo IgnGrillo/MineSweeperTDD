@@ -2,7 +2,7 @@
 
 namespace Features.GameBoard.Scripts.Domain
 {
-    public class BoardServiceService : IBoardServiceService
+    public class BoardService : IBoardService
     {
         public MineBoard GenerateBoard(BoardConfiguration boardConfig)
         {

@@ -14,10 +14,10 @@ namespace Features.GameBoard.Tests.Editor
         public void InvokeGenerateBoardService()
         {
             var boardConfig = new BoardConfiguration(3, 3, 3);
-            var service = Substitute.For<IBoardServiceService>();
-            _action = new GenerateBoard(service);
+            var boardService = Substitute.For<IBoardService>();
+            _action = new GenerateBoard(boardService);
             _action.Invoke(boardConfig);
-            service.Received(Once).GenerateBoard(boardConfig);
+            boardService.Received(Once).GenerateBoard(boardConfig);
         }
     }
 }
