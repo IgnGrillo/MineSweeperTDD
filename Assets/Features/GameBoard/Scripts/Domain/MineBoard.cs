@@ -1,12 +1,9 @@
-﻿namespace Features.GameBoard.Scripts.Domain.Action
+﻿namespace Features.GameBoard.Scripts.Domain
 {
     public class MineBoard
     {
-        private readonly Cell[,] _cells;
+        public Cell[,] Cells { get; }
 
-        public MineBoard(Cell[,] cells)
-        {
-            _cells = cells;
-        }
+        public MineBoard(Cell[,] cells) => Cells = cells;
     }
 }

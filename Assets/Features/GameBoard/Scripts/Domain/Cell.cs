@@ -2,11 +2,6 @@
 {
     public class Cell
     {
-        private bool _isBomb;
-
-        public bool IsBomb
-        {
-            set => _isBomb = value;
-        }
+        public bool IsBomb { get; set; }
     }
 }
