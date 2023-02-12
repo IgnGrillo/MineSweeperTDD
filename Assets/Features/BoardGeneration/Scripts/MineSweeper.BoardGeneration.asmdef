@@ -1,0 +1,4 @@
+﻿{
+  "name": "MineSweeper.BoardGeneration",
+  "references": ["MineSweeper.Base"]
+}

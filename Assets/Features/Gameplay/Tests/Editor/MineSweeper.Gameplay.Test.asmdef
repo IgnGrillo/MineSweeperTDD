@@ -1,8 +1,10 @@
 {
-    "name": "MineSweeper.GameBoard.Test",
+    "name": "MineSweeper.Gameplay.Test",
     "rootNamespace": "",
     "references": [
-        "MineSweeper.GameBoard"
+        "MineSweeper.Gameplay",
+        "MineSweeper.Base",
+        "MineSweeper.BoardGeneration"
     ],
     "includePlatforms": [
         "Editor"

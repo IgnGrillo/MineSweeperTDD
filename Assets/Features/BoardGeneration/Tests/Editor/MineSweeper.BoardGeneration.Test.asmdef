@@ -1,0 +1,15 @@
+﻿{
+  "name": "MineSweeper.BoardGeneration.Test",
+  "references": [
+    "GUID:7d347a50c35c4f80a300b78bea1b0e56",
+    "MineSweeper.Base"
+  ],
+  "includePlatforms": [
+    "Editor"
+  ],
+  "allowUnsafeCode": false,
+  "overrideReferences": true,
+  "precompiledReferences": [
+    "NSubstitute.dll"
+  ]
+}

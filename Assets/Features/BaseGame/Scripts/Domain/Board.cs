@@ -1,9 +1,9 @@
 ﻿namespace Features.GameBoard.Scripts.Domain
 {
-    public class MineBoard
+    public class Board
     {
         public Cell[,] Cells { get; }
 
-        public MineBoard(Cell[,] cells) => Cells = cells;
+        public Board(Cell[,] cells) => Cells = cells;
     }
 }

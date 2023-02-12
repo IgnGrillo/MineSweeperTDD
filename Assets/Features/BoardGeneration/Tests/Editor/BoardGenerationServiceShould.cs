@@ -1,20 +1,22 @@
-﻿using Features.GameBoard.Scripts.Domain;
-using System.Linq;
+﻿using System.Linq;
+using Features.BoardGeneration.Scripts.Domain;
+using Features.BoardGeneration.Scripts.Domain.Services;
+using Features.GameBoard.Scripts.Domain;
 using NSubstitute;
 using NUnit.Framework;
 
-namespace Features.GameBoard.Tests.Editor
+namespace Features.BoardGeneration.Tests.Editor
 {
-    public class BoardServiceShould
+    public class BoardGenerationServiceShould
     {
-        private BoardService _service;
+        private BoardGenerationService _generationService;
         private IBoardBuilder _boardBuilder;
 
         [SetUp]
         public void SetUp()
         {
             _boardBuilder = Substitute.For<IBoardBuilder>();
-            _service = new BoardService(_boardBuilder);
+            _generationService = new BoardGenerationService(_boardBuilder);
         }
 
         [Test]
@@ -43,12 +45,12 @@ namespace Features.GameBoard.Tests.Editor
         }
 
         private void GivenABoardBuilderThatReturns(BoardConfiguration boardConfig, Cell[,] cells) =>
-                _boardBuilder.BuildWith(boardConfig).Returns(new MineBoard(cells));
+                _boardBuilder.BuildWith(boardConfig).Returns(new Board(cells));
 
-        private MineBoard WhenGenerateBoard(BoardConfiguration boardConfig) => _service.GenerateBoard(boardConfig);
+        private Board WhenGenerateBoard(BoardConfiguration boardConfig) => _generationService.GenerateBoard(boardConfig);
 
         private static void ThenAssertBoardConfigurationsAreEqualToBoardValues(
-                MineBoard board, int width, int height, int mines)
+                Board board, int width, int height, int mines)
         {
             Assert.That(width, Is.EqualTo(board.Cells.GetLength(1)));
             Assert.That(height, Is.EqualTo(board.Cells.GetLength(0)));

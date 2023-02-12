@@ -1,17 +1,17 @@
 ﻿using System.Collections;
 using System.Linq;
-using UnityEngine;
+using Features.GameBoard.Scripts.Domain;
 
-namespace Features.GameBoard.Scripts.Domain
+namespace Features.BoardGeneration.Scripts.Domain
 {
     public class BoardBuilder : IBoardBuilder
     {
-        public MineBoard BuildWith(BoardConfiguration boardConfig)
+        public Board BuildWith(BoardConfiguration boardConfig)
         {
             var cells = new Cell[boardConfig.Height, boardConfig.Width];
             InitializeCells(cells);
             PlaceMinesInCells(boardConfig.AmountOfMines, cells);
-            return new MineBoard(cells);
+            return new Board(cells);
         }
 
         private static void InitializeCells(Cell[,] cells)

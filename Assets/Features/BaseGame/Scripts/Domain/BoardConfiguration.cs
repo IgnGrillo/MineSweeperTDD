@@ -1,4 +1,4 @@
-﻿namespace Features.GameBoard.Scripts.Domain
+﻿namespace Features.BoardGeneration.Scripts.Domain
 {
     public readonly struct BoardConfiguration
     {

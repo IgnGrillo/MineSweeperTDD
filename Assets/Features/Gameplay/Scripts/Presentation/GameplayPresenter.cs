@@ -1,13 +1,13 @@
-﻿using Features.GameBoard.Scripts.Domain;
-using Features.GameBoard.Scripts.Domain.Action;
+﻿using Features.BoardGeneration.Scripts.Domain;
+using Features.BoardGeneration.Scripts.Domain.Action;
 
 namespace Features.GameBoard.Scripts.Presentation
 {
-    public class GameBoardPresenter
+    public class GameplayPresenter
     {
         private readonly IGenerateBoard _generateBoard;
 
-        public GameBoardPresenter(IGenerateBoard generateBoard)
+        public GameplayPresenter(IGenerateBoard generateBoard)
         {
             _generateBoard = generateBoard;
         }

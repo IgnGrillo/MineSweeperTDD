@@ -1,9 +1,10 @@
-﻿using Features.GameBoard.Scripts.Domain;
-using Features.GameBoard.Scripts.Domain.Action;
+﻿using Features.BoardGeneration.Scripts.Domain;
+using Features.BoardGeneration.Scripts.Domain.Action;
+using Features.BoardGeneration.Scripts.Domain.Services;
 using NSubstitute;
 using NUnit.Framework;
 
-namespace Features.GameBoard.Tests.Editor
+namespace Features.BoardGeneration.Tests.Editor
 {
     public class GenerateBoardShould
     {
@@ -14,16 +15,16 @@ namespace Features.GameBoard.Tests.Editor
         public void InvokeGenerateBoardService()
         {
             var boardConfig = new BoardConfiguration(3, 3, 3);
-            var boardService = Substitute.For<IBoardService>();
+            var boardService = Substitute.For<IBoardGenerationService>();
             GivenAnActionWith(boardService);
             WhenInvoke(boardConfig);
             ThenGenerateBoardWithConfig(boardService, boardConfig);
         }
 
-        private void GivenAnActionWith(IBoardService boardService) => _action = new GenerateBoard(boardService);
+        private void GivenAnActionWith(IBoardGenerationService boardService) => _action = new GenerateBoard(boardService);
         private void WhenInvoke(BoardConfiguration boardConfig) => _action.Invoke(boardConfig);
 
-        private static void ThenGenerateBoardWithConfig(IBoardService boardService, BoardConfiguration boardConfig) =>
+        private static void ThenGenerateBoardWithConfig(IBoardGenerationService boardService, BoardConfiguration boardConfig) =>
                 boardService.Received(Once).GenerateBoard(boardConfig);
     }
 }
